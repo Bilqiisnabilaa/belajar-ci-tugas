@@ -9,6 +9,6 @@ class FaqController extends BaseController
 {
     public function index()
     {
-        return view('v_faq');
+        return view('v_');
     }
 }

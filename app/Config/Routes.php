@@ -29,6 +29,8 @@ $routes->group('keranjang', ['filter' => 'auth'], function ($routes) {
     $routes->get('clear', 'TransaksiController::cart_clear');
 });
 
+$routes->get('checkout', 'TransaksiController::checkout', ['filter' => 'auth']);
+
 $routes->group('product-category', ['filter' => 'auth'], function ($routes) {
     $routes->get('', 'ProdukCategoryController::index');
     $routes->post('', 'ProdukCategoryController::store');  // ubah dari 'store' ke ''
@@ -39,7 +41,14 @@ $routes->group('product-category', ['filter' => 'auth'], function ($routes) {
 $routes->get('product-category', 'ProdukCategoryController::index', ['as' => 'product-category']);
 
 $routes->get('keranjang', 'TransaksiController::index', ['filter' => 'auth']);
+$routes->post('buy', 'TransaksiController::buy', ['filter' => 'auth']);
 
+$routes->get('get-location', 'TransaksiController::getLocation', ['filter' => 'auth']);
+$routes->get('get-cost', 'TransaksiController::getCost', ['filter' => 'auth']);
+
+$routes->get('profile', 'Home::profile', ['filter' => 'auth']);
 $routes->get('contact', 'FaqController::index', ['filter' => 'auth']);
 $routes->get('faq', 'FaqController::index', ['filter' => 'auth']);
-$routes->get('profil', 'FaqController::index', ['filter' => 'auth']);
+$routes->get('/profil', 'ApiController::profilIndex');
+
+$routes->resource('api', ['controller' => 'apiController']);
