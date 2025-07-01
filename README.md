@@ -280,4 +280,4 @@ Kontribusi sangat diterima! Silakan ajukan Pull Request.
 ---
 
 ## 📞 Dukungan
-Jika Anda memiliki pertanyaan atau masalah, silakan buat issue di repository ini.
+Jika memiliki pertanyaan atau masalah, silakan buat issue di repository ini.
