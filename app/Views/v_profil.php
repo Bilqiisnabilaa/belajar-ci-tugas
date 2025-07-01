@@ -12,6 +12,7 @@
                 <th>ID Transaksi</th>
                 <th>Tanggal</th>
                 <th>Total Bayar</th>
+                <th scope="col">Ongkir</th>
                 <th>Alamat</th>
                 <th>Status</th>
                 <th>Aksi</th>
@@ -25,6 +26,7 @@
                         <td><?= esc($item['id']) ?></td>
                         <td><?= esc($item['created_at']) ?></td>
                         <td><?= number_to_currency($item['total_harga'], 'IDR', 'id_ID') ?></td>
+                        <td><?= number_to_currency($item['ongkir'], 'IDR') ?></td>
                         <td><?= esc($item['alamat']) ?></td>
                         <td>
                             <?= ($item['status'] == "1") 
